@@ -6,7 +6,7 @@ import "dotenv/config";
 
 import usersRouter from "./routes/usersRouter.js";
 import storesRouter from "./routes/storesRouter.js";
-
+import productsRouter from "./routes/productsRouter.js";
 
 const { DB_HOST, PORT = 3000 } = process.env;
 
@@ -24,6 +24,7 @@ app.use(express.json());
 app.use("/api/users", usersRouter);
 
 app.use("/api/stores", storesRouter);
+app.use("/api/products", productsRouter);
 
 app.use((_, res) => {
   res.status(404).json({ message: "Route not found" });
