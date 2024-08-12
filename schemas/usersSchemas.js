@@ -17,6 +17,6 @@ export const loginUserSchema = Joi.object({
 export const refreshUserSchema = Joi.object({
   refreshToken: Joi.string().required().messages({
     "any.required": "RefreshToken is required",
-    "string.base": "The refreshToken must be a text string.",
+    "string.base": "RefreshToken must be a text string.",
   }),
 });
