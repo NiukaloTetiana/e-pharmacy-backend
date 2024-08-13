@@ -2,7 +2,7 @@ import Joi from "joi";
 import { emailRegExp } from "../constants/emailRegExp.js";
 
 const productSchema = Joi.object({
-  id: Joi.string().required().messages({
+  _id: Joi.string().required().messages({
     "any.required": "Product id is required",
     "string.base": "Product id must be a text string.",
   }),
@@ -40,9 +40,8 @@ export const orderSchema = Joi.object({
     "any.required": "Customer information is required",
     "object.base": "Customer must be an object.",
   }),
-  product: productSchema.required().messages({
+  products: Joi.array().items(productSchema).required().messages({
     "any.required": "Product information is required",
-    "object.base": "Product must be an object.",
   }),
   totalPrice: Joi.number().positive().required().messages({
     "any.required": "Total price is required",

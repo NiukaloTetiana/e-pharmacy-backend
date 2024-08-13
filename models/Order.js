@@ -38,7 +38,7 @@ const orderSchema = new Schema(
       required: [true, "Date of order is required"],
     },
   },
-  { versionKey: false, timestamps: true }
+  { versionKey: false}
 );
 
 orderSchema.post("save", handleMongooseError);
