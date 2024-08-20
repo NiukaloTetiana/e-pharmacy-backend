@@ -8,7 +8,7 @@ import usersRouter from "./routes/usersRouter.js";
 import storesRouter from "./routes/storesRouter.js";
 import productsRouter from "./routes/productsRouter.js";
 import reviewsRouter from "./routes/reviewsRouter.js";
-import cartsRouter from "./routes/cartsRouter.js";
+import cartRouter from "./routes/cartRouter.js";
 
 const { DB_HOST, PORT = 3000 } = process.env;
 
@@ -28,7 +28,7 @@ app.use("/api/users", usersRouter);
 app.use("/api/stores", storesRouter);
 app.use("/api/products", productsRouter);
 app.use("/api/customer-reviews", reviewsRouter);
-app.use("/api/carts", cartsRouter);
+app.use("/api/cart", cartRouter);
 
 app.use((_, res) => {
   res.status(404).json({ message: "Route not found" });

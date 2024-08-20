@@ -1,6 +1,6 @@
 import { httpError } from "../helpers/httpError.js";
 import { ctrlWrapper } from "../helpers/ctrlWrapper.js";
-import { getCartById, upsertCart } from "../services/cartsServices.js";
+import { getCartById, upsertCart } from "../services/cartServices.js";
 import { Product } from "../models/Product.js";
 
 const getOneCart = async (req, res) => {

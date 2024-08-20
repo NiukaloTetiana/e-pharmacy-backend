@@ -1,26 +1,26 @@
 import express from "express";
 
-import cartsControllers from "../controllers/cartsControllers.js";
+import cartControllers from "../controllers/cartControllers.js";
 import ordersControllers from "../controllers/ordersControllers.js";
 import { validateBody } from "../middlewares/validateBody.js";
 import { authenticate } from "../middlewares/authenticate.js";
 import { cartSchema } from "../schemas/cartsSchemas.js";
 import { orderSchema } from "../schemas/ordersSchemas.js";
 
-const cartsRouter = express.Router();
+const cartRouter = express.Router();
 
-cartsRouter.get("/", authenticate, cartsControllers.getOneCart);
-cartsRouter.put(
+cartRouter.get("/", authenticate, cartControllers.getOneCart);
+cartRouter.put(
   "/update",
   authenticate,
   validateBody(cartSchema),
-  cartsControllers.saveCart
+  cartControllers.saveCart
 );
-cartsRouter.post(
+cartRouter.post(
   "/checkout",
   authenticate,
   validateBody(orderSchema),
   ordersControllers.addOrder
 );
 
-export default cartsRouter;
+export default cartRouter;

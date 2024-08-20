@@ -1,6 +1,6 @@
 import { ctrlWrapper } from "../helpers/ctrlWrapper.js";
 import { createOrder } from "../services/ordersServices.js";
-import { getCartById } from "../services/cartsServices.js";
+import { getCartById } from "../services/cartServices.js";
 
 const addOrder = async (req, res) => {
   const { _id: userId } = req.user;

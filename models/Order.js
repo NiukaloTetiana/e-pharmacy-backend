@@ -28,7 +28,7 @@ const customerSchema = new Schema({
 const orderSchema = new Schema(
   {
     customer: customerSchema,
-    product: productSchema,
+    products: [productSchema],
     totalPrice: {
       type: Number,
       required: [true, "Total price is required"],
