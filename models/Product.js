@@ -27,9 +27,6 @@ const reviewsSchema = new Schema({
   name: {
     type: String,
   },
-  photo: {
-    type: String,
-  },
   rating: {
     type: Number,
   },
