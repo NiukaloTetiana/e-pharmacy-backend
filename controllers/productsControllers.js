@@ -3,7 +3,7 @@ import { ctrlWrapper } from "../helpers/ctrlWrapper.js";
 import { getProductById, listProducts } from "../services/productsServices.js";
 
 const getAllProducts = async (req, res) => {
-  const { page = 1, limit = 10, name, category } = req.query;
+  const { page = 1, limit = 10, name, category, stock } = req.query;
   const filter = {};
 
   if (name) {
@@ -12,6 +12,10 @@ const getAllProducts = async (req, res) => {
 
   if (category) {
     filter.category = category;
+  }
+
+  if (stock) {
+    filter.stock = stock;
   }
 
   const skip = (page - 1) * limit;
